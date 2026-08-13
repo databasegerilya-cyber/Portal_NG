@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { LogOut, Layers } from "lucide-react";
+import { LogOut, Database } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import styles from "./Navbar.module.css";
 
@@ -31,7 +31,7 @@ export default function Navbar() {
       <div className={styles.container}>
         <div className={styles.brand}>
           <div className={styles.logoBadge}>
-            <Layers size={16} strokeWidth={2} />
+            <Database size={16} strokeWidth={2} />
           </div>
           <span className={styles.title}>Portal NG</span>
         </div>

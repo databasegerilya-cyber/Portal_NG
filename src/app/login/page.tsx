@@ -1,6 +1,6 @@
 import LoginForm from "@/components/LoginForm";
 import ThemeToggle from "@/components/ThemeToggle";
-import { Layers } from "lucide-react";
+import { Database } from "lucide-react";
 import styles from "./page.module.css";
 
 export default function LoginPage() {
@@ -19,7 +19,7 @@ export default function LoginPage() {
       <div className={`${styles.loginCard} glass-card`}>
         <div className={styles.header}>
           <div className={styles.logoBadge}>
-            <Layers size={22} strokeWidth={2} />
+            <Database size={22} strokeWidth={2} />
           </div>
           <h1 className={styles.title}>Portal NG</h1>
           <p className={styles.subtitle}>Masuk ke akun internal Anda</p>
