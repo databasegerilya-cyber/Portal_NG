@@ -16,14 +16,17 @@ export default function AppCard({ icon, name, description, url }: AppCardProps) 
       target="_blank"
       rel="noopener noreferrer"
       className={styles.card}
+      title={`Buka ${name}`}
     >
       <div className={styles.topRow}>
         <div className={styles.iconWrapper}>{icon}</div>
-        <ExternalLink
-          className={styles.externalIcon}
-          size={18}
-          strokeWidth={1.75}
-        />
+        <div className={styles.badgeWrapper}>
+          <ExternalLink
+            className={styles.externalIcon}
+            size={16}
+            strokeWidth={2}
+          />
+        </div>
       </div>
 
       <div className={styles.content}>

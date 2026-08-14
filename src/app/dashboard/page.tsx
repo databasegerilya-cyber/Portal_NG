@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import AppCard from "@/components/AppCard";
+import PixelCat from "@/components/PixelCat";
 import { Users, Package, Globe, Utensils, Star, Sparkles } from "lucide-react";
 import styles from "./page.module.css";
 
@@ -49,7 +50,7 @@ export default function DashboardPage() {
       <main className={styles.contentWrapper}>
         <div className={styles.heroHeader}>
           <div className={styles.greetingRow}>
-            <Sparkles size={20} strokeWidth={1.75} className={styles.heroIcon} />
+            <Sparkles size={18} strokeWidth={1.75} className={styles.heroIcon} />
             <h1 className={styles.greeting}>Selamat datang</h1>
           </div>
           <p className={styles.subtitle}>Pilih aplikasi yang ingin dibuka</p>
@@ -68,9 +69,12 @@ export default function DashboardPage() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        &copy; 2026 Portal NG. All rights reserved.
-      </footer>
+      <div className={styles.bottomSection}>
+        <PixelCat />
+        <footer className={styles.footer}>
+          &copy; 2026 Portal NG. All rights reserved.
+        </footer>
+      </div>
     </div>
   );
 }

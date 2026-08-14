@@ -1,0 +1,216 @@
+.catArea {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  height: 48px;
+  margin: 0 auto;
+  user-select: none;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+.trackLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: transparent;
+}
+
+.catWrapper {
+  position: absolute;
+  bottom: 0px;
+  width: 44px;
+  height: 36px;
+  cursor: pointer;
+  transform-origin: bottom center;
+  transition: transform 0.15s ease-out;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catWrapper:hover {
+  transform: scale(1.15);
+}
+
+.flipRight {
+  transform: scaleX(1);
+}
+
+.flipRight:hover {
+  transform: scaleX(1) scale(1.15);
+}
+
+.flipLeft {
+  transform: scaleX(-1);
+}
+
+.flipLeft:hover {
+  transform: scaleX(-1) scale(1.15);
+}
+
+.jump {
+  animation: catHop 0.5s ease-out;
+}
+
+@keyframes catHop {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 18px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.catSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.waggingTail {
+  transform-origin: 8px 16px;
+  animation: tailWag 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes tailWag {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(18deg);
+  }
+}
+
+/* Floating Heart Animation */
+.heartFloat {
+  position: absolute;
+  bottom: 30px;
+  font-size: 1.125rem;
+  pointer-events: none;
+  animation: floatUpHeart 1.2s ease-out forwards;
+  z-index: 20;
+}
+
+@keyframes floatUpHeart {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.6);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.9);
+  }
+}
+
+/* Speech Bubble */
+.speechBubble {
+  position: absolute;
+  bottom: 40px;
+  transform: translateX(-50%);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 30;
+  animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.speechText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: block;
+}
+
+.bubbleArrow {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: var(--color-card-bg);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* Sleeping Zzz Floating */
+.zzzContainer {
+  position: absolute;
+  top: -12px;
+  right: -6px;
+  display: flex;
+  gap: 2px;
+  pointer-events: none;
+}
+
+.z1,
+.z2,
+.z3 {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+  animation: floatZzz 2.4s ease-in-out infinite;
+}
+
+.z1 {
+  animation-delay: 0s;
+  font-size: 0.55rem;
+}
+.z2 {
+  animation-delay: 0.6s;
+  font-size: 0.65rem;
+}
+.z3 {
+  animation-delay: 1.2s;
+  font-size: 0.75rem;
+}
+
+@keyframes floatZzz {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(4px, -8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(8px, -16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .catArea {
+    height: 40px;
+  }
+  .catWrapper {
+    width: 38px;
+    height: 32px;
+  }
+}
